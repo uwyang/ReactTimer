@@ -1,10 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
 var expect = require('expect');
 
-var TestUtils = require('react-addons-test-utils');
-
-
+//describe is a visual function.
+//grouping tests into groups.
+//e.g., the group under 'App'
 describe('App', () => {
   it('should properly run tests', () => {
     expect(1).toBe(1);
