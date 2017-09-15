@@ -1,0 +1,17 @@
+//underscore: file is partial., used in other file.s
+//ul anywhere under the topbar class.
+.top-bar, .top-bar ul{
+  background-color: $nav-background;
+}
+
+//same as .top-bar .menu-text
+.top-bar{
+  .menu-text{
+    color: $nav-text-color;
+  }
+
+  .menu > .menu-text > a{
+    padding: 0;
+    display: inline;
+  }
+}

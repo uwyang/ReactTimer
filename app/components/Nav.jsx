@@ -1,8 +1,9 @@
 var React = require('react');
+var {Link, IndexLink} = require('react-router');
 
 var Nav = React.createClass({
   render: function(){
-    return {
+    return (
       <div className="top-bar">
         <div className= "top-bar-left">
           <ul className="menu">
@@ -26,9 +27,9 @@ var Nav = React.createClass({
         </div>
 
       </div>
-    };
+    );
   }
 
 });
 
-exports = Nav;
+module.exports = Nav;
