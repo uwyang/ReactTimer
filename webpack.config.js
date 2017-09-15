@@ -29,6 +29,7 @@ module.exports = {
     alias: {
       //remove all app specific aliases.
       Main: 'app/components/Main.jsx',
+      Nav: 'app/components/Nav.jsx', 
       applicationStyles: 'app/styles/app.scss',
     },
     extensions: ['', '.js', '.jsx']
