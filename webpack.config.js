@@ -2,19 +2,15 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    //script loader npm module, because webpack might not load them right.
-    //load scripts before app.jsx!!!!
     'script!jquery/dist/jquery.min.js',
     'script!foundation-sites/dist/foundation.min.js',
     './app/app.jsx'
   ],
   externals: {
-    //let foundation properly attach to jquery method.
-    jquery: 'jQuery',
+    jquery: 'jQuery'
   },
   plugins: [
     new webpack.ProvidePlugin({
-      //if you see$, use jquery, etcetc.
       '$': 'jquery',
       'jQuery': 'jquery'
     })
@@ -25,14 +21,13 @@ module.exports = {
   },
   resolve: {
     root: __dirname,
-    //alias: tell webpack waht to call components and where they are.
     alias: {
-      //remove all app specific aliases.
       Main: 'app/components/Main.jsx',
+      applicationStyles: 'app/styles/app.scss',
       Nav: 'app/components/Nav.jsx',
       Timer: 'app/components/Timer.jsx',
-      Countdown: 'app/components/Countdown.jsx', 
-      applicationStyles: 'app/styles/app.scss',
+      Countdown: 'app/components/Countdown.jsx',
+      Clock: 'app/components/Clock.jsx'
     },
     extensions: ['', '.js', '.jsx']
   },
@@ -48,6 +43,5 @@ module.exports = {
       }
     ]
   },
-  // helps debugging better.
   devtool: 'cheap-module-eval-source-map'
 };
