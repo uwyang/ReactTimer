@@ -9,8 +9,14 @@ var Controls = React.createClass({
     //Since Countdown.jsx is calling it, calls handleStatusChange
     return () => {
       this.props.onStatusChange(newStatus);
-    }; 
+    };
   },
+/*
+  componentWillReceiveProps: function(newProps){
+      console.log("componentWillRecieveProps ", newProps.countdownStatus);
+  },
+*/
+
   render: function () {
     var {countdownStatus} = this.props;
     var renderStartStopButton = () => {
