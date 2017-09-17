@@ -44,15 +44,37 @@ describe('Countdown', () => {
 
     expect(countdown.state.count).toBe(1);
     expect(countdown.state.countdownStatus).toBe('started');
-
     //use setTimeout will be async.
     //mocha doens't like this.
-
     setTimeout(()=> {
       expect(countdown.state.count).toBe(0);
       done();
     }, 2001);
-
   });
+
+  it("when pause status is checked, count doesn't change.", ()=> {
+    var countdown = TestUtils.renderIntoDocument(<Countdown/>);
+    countdown.handleSetCountdown(2);
+    countdown.handleStatusChange('paused');
+    setTimeout(()=>{
+
+        expect(countdown.state.count).toBe(2);
+        expect(countdown.state.countdownStatus).toBe('paused');
+
+    }, 1001);
+  });
+
+    it("count should reset when stopped. .", ()=> {
+      var countdown = TestUtils.renderIntoDocument(<Countdown/>);
+      countdown.handleSetCountdown(2);
+      countdown.handleStatusChange('stopped');
+      setTimeout(()=>{
+
+          expect(countdown.state.count).toBe(0);
+          expect(countdown.state.countdownStatus).toBe('stopped');
+
+      }, 1001);
+    });
+
 
 });
