@@ -1,6 +1,15 @@
 // in import, leave off underscore and extension.
 @import "base/variables";
+
+//foundation
+// if we change variable in foundation-settings,
+//it will get loaded and rendered in foundation
+@import "base/foundation-settings";
+@import "foundation";
+@include foundation-everything;
+
+//components
 @import "components/navigation";
 @import "components/clock";
 @import "components/controls";
-@import "components/page-title"; 
+@import "components/page-title";
